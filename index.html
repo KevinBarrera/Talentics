@@ -2,13 +2,28 @@
 <html>
 <head>
 	<title>suaj</title>
-	
+	<script
+	  src="https://code.jquery.com/jquery-3.1.1.min.js"
+	  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	  crossorigin="anonymous">
+  	</script>
 </head>
 <body>
 	<h1 id='soyh1'>Yo no se</h1>
 	<script>
 		setTimeout(()=>{
-			document.querySelector('#soyh1').innerHTML = 'Sigo sin saber';}, 2000);
+			$('#soyh1').html('Sigo sin saber pero con JQuery');
+			$.get('/otra_ruta', (hola)=>{
+				console.log(hola);
+			});
+			var pollo = {
+				username :'Kevin',
+				password : 'hoahola'
+			}
+			$.post('/mi_ruta', pollo, (dato) =>{
+				console.log(dato);
+			});
+		}, 2000);
 	</script>
 </body>
 </html>
